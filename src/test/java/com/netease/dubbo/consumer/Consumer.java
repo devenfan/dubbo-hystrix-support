@@ -14,7 +14,7 @@ public class Consumer {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "consumer.xml" });
         context.start();
 
-        int count = 100;
+        int count = 1000;
         int threadNumber = 3;
 
         final Semaphore semaphore = new Semaphore(threadNumber);
@@ -41,7 +41,7 @@ public class Consumer {
                     }
 
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

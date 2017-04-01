@@ -19,7 +19,11 @@
 
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.netease.dubbo.service.HelloService"
-		ref="helloService" />
+				   ref="helloService"
+				   loadbalance="random"
+				   cluster="failover"
+				   retries="0"
+	/>
 
 	<!-- 和本地bean一样实现服务 -->
 	<bean id="helloService" class="com.netease.dubbo.provider.HelloServiceImpl" />
